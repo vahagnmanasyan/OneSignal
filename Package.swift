@@ -1,10 +1,13 @@
-// swift-tools-version:5.3
+// swift-tools-version:6.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "OneSignalXCFramework",
+    platforms: [
+        .iOS(.v12)
+    ],
     products: [
         .library(
             name: "OneSignalFramework",
@@ -103,14 +106,6 @@ let package = Package(
                 "OneSignalCore"
             ],
             path: "OneSignalOSCoreWrapper"
-        ),
-        .target(
-            name: "OneSignalLiveActivitiesWrapper",
-            dependencies: [
-                "OneSignalUser",
-                "OneSignalCore"
-            ],
-            path: "OneSignalLiveActivitiesWrapper"
         ),
         .binaryTarget(
           name: "OneSignalFramework",
